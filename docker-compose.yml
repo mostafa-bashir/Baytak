@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./baytak-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USERNAME=mostafa_bashir
+      - DB_PASSWORD=12345678
+      - DB_NAME=baytak
+    depends_on:
+      - db
+
+  frontend:
+    build: ./baytak-frontend
+    ports:
+      - "3002:3002"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: mostafa_bashir
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: baytak
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
