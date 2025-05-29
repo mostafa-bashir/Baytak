@@ -22,7 +22,7 @@ export class UnitController {
   @Get()
   async findAll(
     @Query('search') search: string,
-    @Headers('x-session-id') sessionId?: string, // optional sessionId header
+    @Headers('x-session-id') sessionId?: string, 
   ) {
     return this.unitService.findAll(search, sessionId);
   }

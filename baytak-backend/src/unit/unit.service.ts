@@ -39,7 +39,7 @@ export class UnitService {
 
     // Prepare multipart form data
     const formData = new FormData();
-    formData.append('image', file.buffer.toString('base64')); // base64 string in body
+    formData.append('image', file.buffer.toString('base64')); // base64 string in body based on doc
     formData.append('name', file.originalname);
 
 
@@ -80,7 +80,7 @@ export class UnitService {
     .leftJoinAndSelect('unit.project', 'project')
     .leftJoinAndSelect('unit.category', 'category');
 
-  // Join category scores and filter by sessionId if present
+  // Join category scores and filter by sessionId if present if not get the top scored
   if (sessionId) {
     query.leftJoinAndSelect(
       'category.userCategoryScores',

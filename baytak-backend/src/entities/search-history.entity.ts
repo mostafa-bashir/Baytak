@@ -11,10 +11,10 @@ export class SearchHistory {
   id: number;
 
   @Column()
-  userId: string; // or number, depending on your user ID type
+  userId: string; 
 
   @Column()
-  searchText: string; // 🔄 stores the actual search string
+  searchText: string;
 
   @CreateDateColumn()
   searchedAt: Date;
