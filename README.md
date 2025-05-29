@@ -1,83 +1,89 @@
-Baytak
-Baytak is a modern web application designed to manage and showcase various projects with a user-friendly interface. It features a clean navbar with the branding "Baytak" and presents project details in a horizontal slider format, using reusable components for efficient UI rendering.
+# Baytak
 
-Table of Contents
-Project Overview
+**Baytak** is a modern web application designed to manage and showcase various projects with a user-friendly interface. It features a clean navbar with the branding **"Baytak"** and presents project details in a horizontal slider format, using reusable components for efficient UI rendering.
 
-Features
+---
 
-Tech Stack
+## 📑 Table of Contents
 
-Installation
+- [Project Overview](#project-overview)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Folder Structure](#folder-structure)  
+- [Contributing](#contributing)  
+- [License](#license)  
+- [Contact](#contact)
 
-Usage
+---
 
-Folder Structure
+## 📘 Project Overview
 
-Contributing
+Baytak is developed as a project portfolio and management platform. It fetches project data from a **NestJS backend API** and displays each project's units in a horizontal slider. The UI is built with **React** and **Ant Design** to ensure a smooth and visually appealing experience.
 
-License
+---
 
-Contact
+## ✨ Features
 
-Project Overview
-Baytak is developed as a project portfolio and management platform. It fetches project data from a backend API and displays each project's units in a horizontal slider. The UI is built with React and Ant Design to ensure a smooth and visually appealing experience.
+- Responsive navbar with **"Baytak"** branding  
+- Fetch projects from `/projects` API endpoint  
+- Display each project's units in horizontal sliders  
+- Reusable `UnitCard` component for unit rendering  
+- Smooth and intuitive UI using Ant Design components  
+- **Search history management using cookies**  
+- **API rate limiting with Throttler in NestJS for security**  
+- **JWT-based secured admin panel access (NestJS auth)**  
+- **Personalized recommendation system for users**
 
-Features
-Responsive navbar with "Baytak" branding
+---
 
-Fetch projects from /projects API endpoint
+## 🛠️ Tech Stack
 
-Display projects with horizontal sliders for their units
+- **Frontend:** React, Next.js  
+- **Backend:** NestJS (Node.js framework)  
+- **UI Library:** Ant Design  
+- **API Calls:** Fetch / Axios  
+- **Styling:** CSS / Styled Components / Less  
+- **Security & Auth:** JWT, Throttler (NestJS)  
+- **Storage:** Cookies for client-side history tracking
 
-Use of reusable UnitCard component for unit representation
+---
 
-Smooth and intuitive UI with Ant Design components
+## ⚙️ Installation
 
-Tech Stack
-Frontend: React, Next.js
+Clone the repository:
 
-UI Library: Ant Design
-
-API Calls: Fetch / Axios (depending on implementation)
-
-Styling: CSS / Styled Components / Less (adjust based on your setup)
-
-Installation
-Clone the repository
-
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/yourusername/baytak.git
-Navigate to the project directory
+Navigate to the project directory:
 
 bash
 Copy
 Edit
 cd baytak
-Install dependencies
+Install dependencies:
 
 bash
 Copy
 Edit
 npm install
-Start the development server
+Start the development server:
 
 bash
 Copy
 Edit
 npm run dev
-Usage
-Access the app at http://localhost:3000
+🚀 Usage
+Visit the app at http://localhost:3000
 
-The navbar shows only the "Baytak" label
+The navbar will display only the "Baytak" label
 
-Projects are fetched from the /projects API endpoint
+Projects are fetched from the /projects API endpoint (served by NestJS backend)
 
-Scroll horizontally to view project units displayed by the UnitCard component
+Scroll horizontally to explore project units through UnitCard components
 
-Folder Structure
+📁 Folder Structure
 bash
 Copy
 Edit
@@ -88,5 +94,5 @@ Edit
  ├─ /styles           # CSS or styling files
  ├─ /utils            # Utility functions (API calls, helpers)
  └─ package.json      # Project dependencies and scripts
-Contributing
+🤝 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements, bug fixes, or new features.
