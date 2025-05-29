@@ -56,37 +56,28 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/baytak.git
+```
 Navigate to the project directory:
-
-bash
-Copy
-Edit
+```
 cd baytak
-Install dependencies:
-
-bash
-Copy
-Edit
+```
+```
 npm install
+```
 Start the development server:
-
-bash
-Copy
-Edit
+```
 npm run dev
+```
+
 🚀 Usage
 Visit the app at http://localhost:3000
 
 The navbar will display only the "Baytak" label
 
-Projects are fetched from the /projects API endpoint (served by NestJS backend)
+Projects are fetched from the /projects API endpoint (served by the NestJS backend)
 
-Scroll horizontally to explore project units through UnitCard components
-
-📁 Folder Structure
-bash
-Copy
-Edit
+Scroll horizontally to explore project units displayed using the UnitCard component
+```
 /baytak
  ├─ /components       # Reusable UI components (e.g., UnitCard, Navbar)
  ├─ /pages            # Next.js pages (e.g., /projects)
@@ -94,5 +85,7 @@ Edit
  ├─ /styles           # CSS or styling files
  ├─ /utils            # Utility functions (API calls, helpers)
  └─ package.json      # Project dependencies and scripts
+```
+
 🤝 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements, bug fixes, or new features.
