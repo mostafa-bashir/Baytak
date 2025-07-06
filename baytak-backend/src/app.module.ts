@@ -12,8 +12,21 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 
-console.log('DB HOST:', process.env.DB_HOST);
-console.log('DB PORT:', process.env.DB_PORT);
+ConfigModule.forRoot({ isGlobal: true });
+
+const dbConfig = {
+  type: 'postgres' as const,
+  host: process.env.DB_HOST,
+  port: +process.env.DB_PORT,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+  synchronize: true,
+};
+
+console.log('TypeORM Config:', dbConfig);
+
 @Module({
   imports: [
     ThrottlerModule.forRoot({
@@ -21,16 +34,7 @@ console.log('DB PORT:', process.env.DB_PORT);
       limit: 50,
     } as any),
     ConfigModule.forRoot({ isGlobal: true }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      entities: [join(__dirname, '**', '*.entity.{ts,js}')], // dynamic entity loading
-      synchronize: true, // for dev only, auto sync schema
-    }),
+    TypeOrmModule.forRoot(dbConfig),
     CategoryModule,
     UnitModule,
     ProjectModule,

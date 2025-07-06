@@ -1,20 +1,20 @@
-# Use Node official image
 FROM node:18-alpine
 
-# Create app directory
+RUN apk add --no-cache netcat-openbsd
+
 WORKDIR /app
 
-# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --production
+RUN npm install
 
-# Copy all backend source files
 COPY . .
 
-# Expose the port backend listens on (e.g., 3000)
+# Build the app
+RUN npm run build
+
+# Expose the port
 EXPOSE 3000
 
-# Start the backend
+# Start using production script
 CMD ["npm", "run", "start:prod"]
