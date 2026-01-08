@@ -55,7 +55,7 @@ Baytak is developed as a project portfolio and management platform. It fetches p
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/baytak.git
+git clone https://github.com/mostafa-bashir/baytak.git
 ```
 Navigate to the project directory:
 ```
